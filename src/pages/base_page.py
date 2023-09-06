@@ -58,7 +58,6 @@ class BasePage:
         """Selects an option from a dropdown."""
         element.find_element_by_css_selector("[value='{}']".format(option)).click()
 
-
     def checkIfMandatoryComponents(self):
         try:
             # Use WebDriverWait to wait for elements to be present

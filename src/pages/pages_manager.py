@@ -10,7 +10,8 @@ class PageObjectManager:
 
     def initialize_pages(self):
         self._home_page = None
-        self._monthly_subs_page = None
+        self._cars_page = None
+        self._car_list_section = None
         # Add other page properties here
 
 
@@ -22,8 +23,16 @@ class PageObjectManager:
         return self._home_page
 
     @property
-    def monthly_subs_page(self):
-        if self._monthly_subs_page is None:
-            from pages.monthly_subscription.monthly_subscription_page import MonthlySubscriptionPage
-            self._monthly_subs_page = MonthlySubscriptionPage(self.driver)
-        return self._monthly_subs_page
+    def cars_page(self):
+        if self._cars_page is None:
+            from pages.cars_page.cars_page import MonthlySubscriptionPage
+            self._cars_page = MonthlySubscriptionPage(self.driver)
+        return self._cars_page
+
+
+    @property
+    def car_list_section(self):
+        if self._car_list_section is None:
+            from pages.cars_page.cars_page import CarListSection
+            self._car_list_section = CarListSection(self.driver)
+        return self._car_list_section
